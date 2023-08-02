@@ -29,10 +29,6 @@ android {
             kotlinCompilerExtensionVersion = composeCompilerVersion
         }
 
-        kotlinOptions {
-            jvmTarget = "11"
-        }
-
         testOptions {
             execution = "ANDROIDX_TEST_ORCHESTRATOR"
             animationsDisabled = true
@@ -127,6 +123,7 @@ dependencies {
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("org.assertj:assertj-core:$assertjVersion")
     testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("io.mockk:mockk-agent-jvm:$mockkVersion")
 
     testImplementation("io.insert-koin:koin-test:$koinVersion")
     testImplementation("io.insert-koin:koin-test-junit5:$koinVersion")
