@@ -23,7 +23,7 @@ subprojects {
 
     apply(plugin = "pl.droidsonroids.pitest")
 
-    buildscript {
+    /*buildscript {
         dependencies.add(
             PITEST_CONFIGURATION_NAME,
             "com.groupcdg.pitest:pitest-kotlin-plugin:1.1.3"
@@ -34,7 +34,7 @@ subprojects {
         )
         dependencies.add(PITEST_CONFIGURATION_NAME, "com.groupcdg.arcmutate:base:1.2.2")
         dependencies.add(PITEST_CONFIGURATION_NAME, "com.groupcdg:pitest-git-plugin:1.1.2")
-    }
+    }*/
 
     extensions.findByType<PitestPluginExtension>()?.apply {
         setOf("de.eso.*").also { targets ->
@@ -43,6 +43,6 @@ subprojects {
         }
         junit5PluginVersion.set("1.0.0")
         pitestVersion.set("1.15.1")
-        mutators.set(setOf("STRONGER", "EXTENDED"))
+        mutators.set(setOf("STRONGER"/*, "EXTENDED"*/))
     }
 }
